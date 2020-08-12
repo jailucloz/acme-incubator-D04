@@ -1,6 +1,7 @@
 
 package acme.entities.applications;
 
+import java.beans.Transient;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -12,10 +13,11 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
+import acme.entities.investmentRounds.Investment;
+import acme.entities.roles.Entrepreneur;
 import acme.entities.roles.Investor;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
-import acme.investmentRounds.Investment;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -57,5 +59,18 @@ public class Application extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Investor			investor;
+
+
+	// Derived attributes
+
+	@Transient
+	public Entrepreneur getEntrepreneur() {
+
+		Entrepreneur result;
+		result = new Entrepreneur();
+		result = this.investmentRound.getEntrepreneur();
+
+		return result;
+	}
 
 }
