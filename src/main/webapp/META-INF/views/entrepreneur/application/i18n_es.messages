@@ -1,4 +1,4 @@
-# i18n_es.messages
+# i18n_en.messages
 #
 # Copyright (c) 2019 Rafael Corchuelo.
 #
@@ -8,17 +8,17 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.notice.list.label.title	= Titulo 
-authenticated.notice.list.label.deadline = Fecha de fin
+entrepreneur.application.list.label.offer	= Oferta
+entrepreneur.application.list.label.creationMoment = Momento de creación
 
 
-authenticated.notice.form.label.headerPicture	= Imagen de cabecera
-authenticated.notice.form.label.title	= Titulo
-authenticated.notice.form.label.deadline = Fecha de fin
-authenticated.notice.form.label.relatedNotices	= Webs relacionadas
-authenticated.notice.form.label.body	= Texto
-authenticated.notice.form.label.picture	= Imagen
 
-authenticated.notice.form.button.return = Volver
+entrepreneur.application.form.label.ticker	= Ticker
+entrepreneur.application.form.label.creationMoment	= Momento de creación
+entrepreneur.application.form.label.statement = Estado
+entrepreneur.application.form.label.offer	= Oferta
 
-?
+
+entrepreneur.application.form.button.return = Volver
+
+entrepreneur.application.ticker.pattern = Debe cumplir el patrón: “SSS-YY-NNNNNN”.  “SSS” denota el sector, “YY” denota el año de creación y “NNNNNN” es un número entre 0 y 999999

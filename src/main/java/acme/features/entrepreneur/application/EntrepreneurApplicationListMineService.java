@@ -24,7 +24,7 @@ public class EntrepreneurApplicationListMineService implements AbstractListServi
 	public boolean authorise(final Request<Application> request) {
 		assert request != null;
 
-		return true;
+		return request.getPrincipal().hasRole(Entrepreneur.class);
 	}
 
 	@Override
@@ -34,9 +34,9 @@ public class EntrepreneurApplicationListMineService implements AbstractListServi
 		assert model != null;
 
 		//model.setAttribute("status", entity.getStatus().toString());
-		model.setAttribute("investmentRound", entity.getInvestmentRound().getTitle());
+		//model.setAttribute("investmentRound", entity.getInvestmentRound().getTitle());
 
-		request.unbind(entity, model, "creationMoment", "ticker", "statement");
+		request.unbind(entity, model, "creationMoment", "ticker", "statement", "offer");
 
 	}
 

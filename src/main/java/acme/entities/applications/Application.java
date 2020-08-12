@@ -12,6 +12,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import acme.entities.investmentRounds.Investment;
 import acme.entities.roles.Entrepreneur;
@@ -34,6 +35,7 @@ public class Application extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
+	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$", message = "{entrepreneur.application.ticker.pattern}")
 	private String				ticker;
 
 	@NotNull

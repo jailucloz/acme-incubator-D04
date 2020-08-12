@@ -8,17 +8,17 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.notice.list.label.title	= Title
-authenticated.notice.list.label.deadline = Deadline
+entrepreneur.application.list.label.offer	= Offer
+entrepreneur.application.list.label.creationMoment = CreationMoment
 
 
 
-authenticated.notice.form.label.headerPicture	= Header Picture
-authenticated.notice.form.label.title	= Title
-authenticated.notice.form.label.deadline = Deadline
-authenticated.notice.form.label.relatedNotices	= Related Webs
-authenticated.notice.form.label.body	= Text
-authenticated.notice.form.label.picture	= Picture
+entrepreneur.application.form.label.ticker	= Ticker
+entrepreneur.application.form.label.creationMoment	= Creation moment
+entrepreneur.application.form.label.statement = Statement
+entrepreneur.application.form.label.offer	= Offer
 
-authenticated.notice.form.button.return = Return
 
+entrepreneur.application.form.button.return = Return
+
+entrepreneur.application.ticker.pattern = match the pattern: “SSS-YY-NNNNNN”.  “SSS” denotes the sector, “YY” denotes the creation year; and “NNNNNN” is number in range 0 up to 999999

@@ -48,8 +48,8 @@ public class Investment extends DomainEntity {
 	@Past
 	private Date				creationMoment;
 
-	//	@NotNull
-	//	private RoundKind			roundKind;
+	@NotNull
+	private RoundKind			roundKind;
 
 	@NotBlank
 	private String				title;
@@ -67,13 +67,6 @@ public class Investment extends DomainEntity {
 	//@NotNull
 	//@Valid
 	//private Set<Activity>		workProgramme;
-
-	@NotBlank
-	private String				statement;
-
-	@NotNull
-	@Valid
-	private Money				offer;
 
 	// Relationships --------------------------------------------------------------
 
