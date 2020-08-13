@@ -336,5 +336,55 @@
 		<property name="maxMoney" value="44000.00 €"/>
 		<property name="email" value="example4@email.com"/>
 	</bean>
+	
+	<!-- Entrepreneurs  -->
+	
+	<bean name="entrepreneurUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="entrepreneur" />
+		<property name="password" value="entrepreneur" />
+		<property name="enabled" value="true" />
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Entrepreneur" />
+				<property name="surname" value="Acme" />
+				<property name="email" value="entrepreneur@acme.com" />
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="entrepreneur01" />
+				<ref bean="entrepreneurAuthenticated" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name="entrepreneur01" class="acme.entities.roles.Entrepreneur">
+		<property name="userAccount" ref="entrepreneurUserAccount"/>
+		<property name="startUpName" value="Entrepreneur01" />
+		<property name="sector" value="Informatic" />
+		<property name="qualifications" value="University" />
+		<property name="skills" value="Too high" />
+	</bean>
+	
+	<bean name="entrepreneurAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="entrepreneurUserAccount" />
+	</bean>
+	
+	
+	<!-- Investment Rounds  -->
+	
+	<bean id="investment01" class="acme.entities.investmentRounds.Investment">
+		<property name="ticker" value="FNB"/>
+		<property name="creationMoment" value="2020/07/27 00:00"/>
+		<property name="roundKind" value="ANGEL"/>
+		<property name="title" value="Sample investment 01"/>
+		<property name="description" value="This is the description of the investment"/>
+		<property name="amount" value="456.99 €"/>
+		<property name="additionalInformation" value="http://additionalexample.com"/>
+		<property name="entrepreneur">
+			<ref bean="entrepreneur01"/>
+		</property>
+	</bean>
+		
 
 </beans>
