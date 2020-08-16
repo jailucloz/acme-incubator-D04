@@ -7,11 +7,11 @@
 
 <tiles-definitions>
 
-	<definition name="authenticated/investment-round/list" extends="master">
+	<definition name="authenticated/investment/list" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/investment-round/list.jsp" />
 	</definition>
 
-	<definition name="authenticated/investment-round/form" extends="master">
+	<definition name="authenticated/investment/form" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/investment-round/form.jsp" />
 	</definition>
 

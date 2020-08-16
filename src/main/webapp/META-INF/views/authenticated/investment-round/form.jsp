@@ -22,12 +22,12 @@
     <acme:form-moment  code="authenticated.investmentRound.form.label.creationMoment" path="creationMoment" />
     <acme:form-textbox code="authenticated.investmentRound.form.label.roundKind" path="roundKind" />
     <acme:form-textarea code="authenticated.investmentRound.form.label.description" path="description" />
-    <acme:form-textbox code="authenticated.investmentRound.form.label.amount" path="amount" />
+    <acme:form-money code="authenticated.investmentRound.form.label.amount" path="amount" />
     <acme:form-textbox code="authenticated.investmentRound.form.label.additionalInformation" path="additionalInformation" />
-<%--     <acme:form-textbox code="authenticated.investmentRound.form.label.workProgramme" path="workProgramme" /> --%>
     <acme:form-textbox code="authenticated.investmentRound.form.label.statement" path="statement" />
     <acme:form-textbox code="authenticated.investmentRound.form.label.offer" path="offer" />
-    <acme:form-textbox code="authenticated.investmentRound.form.label.entrepreneur" path="entrepreneur" />
+    
+    <acme:menu-suboption code="authenticated.investmentRound.form.label.workProgramme" action="/authenticated/activity/list"/>
 
 	<acme:form-return code="authenticated.investmentRound.form.button.return" />
-</acme:form>
+</acme:form> 

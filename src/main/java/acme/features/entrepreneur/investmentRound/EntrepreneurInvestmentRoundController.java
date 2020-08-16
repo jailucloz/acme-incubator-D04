@@ -1,5 +1,5 @@
 
-package acme.features.authenticated.investmentRound;
+package acme.features.entrepreneur.investmentRound;
 
 import javax.annotation.PostConstruct;
 
@@ -8,19 +8,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.investmentRounds.Investment;
+import acme.entities.roles.Entrepreneur;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
-import acme.framework.entities.Authenticated;
 
 @Controller
 @RequestMapping("/authenticated/investment/")
-public class AuthenticatedInvestmentRoundController extends AbstractController<Authenticated, Investment> {
+public class EntrepreneurInvestmentRoundController extends AbstractController<Entrepreneur, Investment> {
 
 	@Autowired
-	private AuthenticatedInvestmentRoundsListService	listService;
+	private EntrepreneurInvestmentRoundsListService	listService;
 
 	@Autowired
-	private AuthenticatedInvestmentRoundsShowService	showService;
+	private EntrepreneurInvestmentRoundsShowService	showService;
 
 
 	@PostConstruct

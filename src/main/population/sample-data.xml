@@ -373,14 +373,30 @@
 	
 	<!-- Investment Rounds  -->
 	
+	<bean id="activity01" class="acme.entities.investmentRounds.Activity">
+		<property name="title" value="Activity 1"/>
+		<property name="start" value="2020/07/27 00:00"/>
+		<property name="end" value="2020/09/23 00:00"/>
+		<property name="budget" value="234.99 €"/>
+	</bean>
+	
+	<bean id="activity02" class="acme.entities.investmentRounds.Activity">
+		<property name="title" value="Activity 2"/>
+		<property name="start" value="2020/06/12 00:00"/>
+		<property name="end" value="2020/09/30 00:00"/>
+		<property name="budget" value="156.00 €"/>
+	</bean>
+	
 	<bean id="investment01" class="acme.entities.investmentRounds.Investment">
 		<property name="ticker" value="FNB"/>
 		<property name="creationMoment" value="2020/07/27 00:00"/>
 		<property name="roundKind" value="ANGEL"/>
 		<property name="title" value="Sample investment 01"/>
 		<property name="description" value="This is the description of the investment"/>
-		<property name="amount" value="456.99 €"/>
 		<property name="additionalInformation" value="http://additionalexample.com"/>
+		<property name="workProgramme">
+			<ref bean="activity01"/>
+		</property>
 		<property name="entrepreneur">
 			<ref bean="entrepreneur01"/>
 		</property>

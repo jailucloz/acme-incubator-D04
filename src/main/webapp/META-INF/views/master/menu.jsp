@@ -43,7 +43,7 @@
 		<acme:menu-separator/>
 		<acme:menu-suboption code="master.menu.authenticated.challenge.list" action="/authenticated/challenge/list"/>
 		<acme:menu-separator/>
-		<acme:menu-suboption code="master.menu.authenticated.investment.list" action="/authenticated/investment-round/list"/>
+		<acme:menu-suboption code="master.menu.authenticated.investment.list" action="/authenticated/investment/list"/>
 		</acme:menu-option>
 		
 		
@@ -83,7 +83,7 @@
 		
 		<!-- Entrepreneur  -->
 		<acme:menu-option code="master.menu.entrepreneur" access="hasRole('Entrepreneur')">
-		<acme:menu-suboption code="master.menu.entrepreneur.investment.list" action="/entrepreneur/investment-round/list-mine"/>
+		<acme:menu-suboption code="master.menu.entrepreneur.investment.list" action="/entrepreneur/investment/list-mine"/>
 		</acme:menu-option>	
 		
 
