@@ -13,7 +13,7 @@ import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/authenticated/activity/")
+@RequestMapping("/entrepreneur/activity/")
 public class EntrepreneurActivityController extends AbstractController<Entrepreneur, Activity> {
 
 	@Autowired

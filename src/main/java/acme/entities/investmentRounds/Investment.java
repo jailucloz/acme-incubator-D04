@@ -2,7 +2,6 @@
 package acme.entities.investmentRounds;
 
 import java.util.Date;
-import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Index;
@@ -10,11 +9,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.URL;
 
@@ -43,6 +42,7 @@ public class Investment extends DomainEntity {
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
+	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$")
 	private String				ticker;
 
 	@NotNull
@@ -66,23 +66,11 @@ public class Investment extends DomainEntity {
 	@URL
 	private String				additionalInformation;
 
-	@NotNull
-	@Valid
-	private Set<Activity>		workProgramme;
-
-
 	// Relationships --------------------------------------------------------------
-
-	@Transient
-	public Double getAmount() {
-		Double res = this.workProgramme.stream().mapToDouble(x -> x.getBudget().getAmount()).sum();
-		return res;
-	}
-
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Entrepreneur entrepreneur;
+	private Entrepreneur		entrepreneur;
 
 }

@@ -8,6 +8,7 @@ import acme.entities.investmentRounds.Investment;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -21,7 +22,19 @@ public class EntrepreneurInvestmentRoundsShowService implements AbstractShowServ
 	public boolean authorise(final Request<Investment> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int investId;
+		Investment i;
+		Entrepreneur entrepreneur;
+		Principal principal;
+
+		investId = request.getModel().getInteger("id");
+		i = this.repository.findOneById(investId);
+		entrepreneur = i.getEntrepreneur();
+		principal = request.getPrincipal();
+		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override

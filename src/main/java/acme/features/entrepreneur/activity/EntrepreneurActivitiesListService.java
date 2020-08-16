@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.investmentRounds.Activity;
+import acme.entities.investmentRounds.Investment;
 import acme.entities.roles.Entrepreneur;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
@@ -23,7 +25,19 @@ public class EntrepreneurActivitiesListService implements AbstractListService<En
 	public boolean authorise(final Request<Activity> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int investId;
+		Investment i;
+		Entrepreneur entrepreneur;
+		Principal principal;
+
+		investId = request.getModel().getInteger("id");
+		i = this.repository.findAllActivitiesById(investId).stream().findFirst().get().getInvestment();
+		entrepreneur = i.getEntrepreneur();
+		principal = request.getPrincipal();
+		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -41,7 +55,7 @@ public class EntrepreneurActivitiesListService implements AbstractListService<En
 
 		Collection<Activity> result;
 
-		result = this.repository.findManyAll();
+		result = this.repository.findAllActivitiesById(request.getModel().getInteger("id"));
 
 		return result;
 	}

@@ -98,7 +98,7 @@ master.menu.authenticated = Authenticated
 # master.menu.entrepreneur ###################################################
 
 master.menu.entrepreneur = Entrepreneur
-master.menu.entrepreneur.investment.list = Your Investments List
+master.menu.entrepreneur.investment.list = My Investment List
 
 # master.menu.provider ########################################################
 

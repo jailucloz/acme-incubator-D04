@@ -41,7 +41,7 @@ public class AuthenticatedActivitiesListService implements AbstractListService<A
 
 		Collection<Activity> result;
 
-		result = this.repository.findManyAll();
+		result = this.repository.findAllActivitiesById(request.getModel().getInteger("id"));
 
 		return result;
 	}

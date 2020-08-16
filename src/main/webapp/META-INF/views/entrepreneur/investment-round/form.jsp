@@ -24,10 +24,12 @@
     <acme:form-textarea code="entrepreneur.investmentRound.form.label.description" path="description" />
     <acme:form-money code="entrepreneur.investmentRound.form.label.amount" path="amount" />
     <acme:form-textbox code="entrepreneur.investmentRound.form.label.additionalInformation" path="additionalInformation" />
-    <acme:form-textbox code="entrepreneur.investmentRound.form.label.statement" path="statement" />
-    <acme:form-textbox code="entrepreneur.investmentRound.form.label.offer" path="offer" />
     
-    <acme:menu-suboption code="entrepreneur.investmentRound.form.label.workProgramme" action="/authenticated/activity/list"/>
+    <a href=/acme-incubator/entrepreneur/activity/list?id=${id}>
+    	<acme:message code="entrepreneur.investmentRound.activity.list"/>
+    </a>
 
+	 <br>
+	 </br>
 	<acme:form-return code="entrepreneur.investmentRound.form.button.return" />
 </acme:form> 

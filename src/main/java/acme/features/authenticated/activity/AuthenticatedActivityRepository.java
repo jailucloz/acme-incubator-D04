@@ -18,4 +18,7 @@ public interface AuthenticatedActivityRepository extends AbstractRepository {
 	@Query("select a from Activity a")
 	Collection<Activity> findManyAll();
 
+	@Query("select a from Activity a where a.investment.id =?1")
+	Collection<Activity> findAllActivitiesById(int id);
+
 }
