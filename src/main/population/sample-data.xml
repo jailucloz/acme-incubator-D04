@@ -99,6 +99,9 @@
 			</bean>
 		</property>
 	</bean>
+	
+	
+	
 
 	<!-- Tool -->
   
@@ -337,6 +340,7 @@
 		<property name="email" value="example4@email.com"/>
 	</bean>
 	
+
 	<!-- Entrepreneurs  -->
 	
 	<bean name="entrepreneurUserAccount" class="acme.framework.entities.UserAccount">
@@ -348,16 +352,20 @@
 				<property name="name" value="Entrepreneur" />
 				<property name="surname" value="Acme" />
 				<property name="email" value="entrepreneur@acme.com" />
+
 			</bean>
 		</property>
 		<property name="roles">
 			<list>
+
 				<ref bean="entrepreneur01" />
 				<ref bean="entrepreneurAuthenticated" />
+
 			</list>
 		</property>
 	</bean>
 	
+
 	<bean name="entrepreneur01" class="acme.entities.roles.Entrepreneur">
 		<property name="userAccount" ref="entrepreneurUserAccount"/>
 		<property name="startUpName" value="Entrepreneur01" />
@@ -406,5 +414,6 @@
 		</property>
 	</bean>
 		
+
 
 </beans>

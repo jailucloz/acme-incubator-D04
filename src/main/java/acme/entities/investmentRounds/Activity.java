@@ -1,4 +1,5 @@
 
+
 package acme.entities.investmentRounds;
 
 import java.util.Date;
@@ -52,3 +53,4 @@ public class Activity extends DomainEntity {
 	private Investment			investment;
 
 }
+
