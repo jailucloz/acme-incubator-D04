@@ -7,6 +7,14 @@
        drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
 
+    alter table `application` 
+       drop 
+       foreign key `FK30l9w5a7tidtoccodjps8rane`;
+
+    alter table `application` 
+       drop 
+       foreign key `FKl4fp0cd8c008ma79n6w58xhk9`;
+
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
@@ -15,13 +23,29 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+    alter table `entrepreneur` 
+       drop 
+       foreign key FK_r6tqltqvrlh1cyy8rsj5pev1q;
+
+    alter table `investment` 
+       drop 
+       foreign key `FKk1kua11epb11pnocw4pcgndn1`;
+
+    alter table `investor` 
+       drop 
+       foreign key FK_dcek5rr514s3rww0yy57vvnpq;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
+    drop table if exists `activity`;
+
     drop table if exists `administrator`;
 
     drop table if exists `anonymous`;
+
+    drop table if exists `application`;
 
     drop table if exists `authenticated`;
 
@@ -29,7 +53,13 @@
 
     drop table if exists `consumer`;
 
+    drop table if exists `entrepreneur`;
+
     drop table if exists `inquire`;
+
+    drop table if exists `investment`;
+
+    drop table if exists `investor`;
 
     drop table if exists `notice`;
 

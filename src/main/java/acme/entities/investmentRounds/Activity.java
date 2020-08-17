@@ -1,5 +1,5 @@
 
-package acme.investmentRounds;
+package acme.entities.investmentRounds;
 
 import java.util.Date;
 

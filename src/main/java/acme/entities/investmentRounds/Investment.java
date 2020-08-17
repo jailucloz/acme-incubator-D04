@@ -1,8 +1,7 @@
 
-package acme.investmentRounds;
+package acme.entities.investmentRounds;
 
 import java.util.Date;
-import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Index;
@@ -17,7 +16,7 @@ import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.roles.Investor;
+import acme.entities.roles.Entrepreneur;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
@@ -36,7 +35,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(indexes = @Index(columnList = "reference"))
+@Table(indexes = @Index(columnList = "ticker"))
 public class Investment extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
@@ -65,22 +64,15 @@ public class Investment extends DomainEntity {
 	@URL
 	private String				additionalInformation;
 
-	@NotNull
-	@Valid
-	private Set<Activity>		workProgramme;
-
-	@NotBlank
-	private String				statement;
-
-	@NotNull
-	@Valid
-	private Money				offer;
+	//@NotNull
+	//@Valid
+	//private Set<Activity>		workProgramme;
 
 	// Relationships --------------------------------------------------------------
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Investor			investor;
+	private Entrepreneur		entrepreneur;
 
 }
