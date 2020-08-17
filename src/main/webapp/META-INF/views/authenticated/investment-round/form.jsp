@@ -30,7 +30,6 @@
     </a>
 
 	<br>
-	</br>
 	
 	<acme:form-return code="authenticated.investmentRound.form.button.return" />
 </acme:form> 

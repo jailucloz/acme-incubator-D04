@@ -30,6 +30,5 @@
     </a>
 
 	 <br>
-	 </br>
 	<acme:form-return code="entrepreneur.investmentRound.form.button.return" />
 </acme:form> 
