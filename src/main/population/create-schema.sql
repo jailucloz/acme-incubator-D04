@@ -7,9 +7,7 @@
         `end` datetime(6),
         `start` datetime(6),
         `title` varchar(255),
-
         `investment_id` integer not null,
-
         primary key (`id`)
     ) engine=InnoDB;
 

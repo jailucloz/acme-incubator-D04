@@ -8,6 +8,18 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+
+# master.menu.investor ###################################################
+master.menu.investor = Inversor
+master.menu.investor.application.list= Lista de aplicaciones
+
+
+# master.menu.entrepreneur ###################################################
+
+master.menu.entrepreneur = Emprendedor
+master.menu.entrepreneur.investment.list = Mi lista de inversiones
+master.menu.entrepreneur.application.list = Mi lista de solicitudes
+
 # master.banner.welcome #######################################################
 
 master.banner.background = #FFE97F 
