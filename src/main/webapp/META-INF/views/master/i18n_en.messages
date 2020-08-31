@@ -116,6 +116,7 @@ master.menu.entrepreneur.application.list = My application list
 # master.menu.bookkeeper ###################################################
 
 master.menu.bookkeeper = Bookkeeper
+master.menu.bookkeeper.investment.list-mine = My investment Round List
 master.menu.bookkeeper.investment.list-not = Investment List without my accounting records
 
 # master.menu.provider ########################################################
