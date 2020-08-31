@@ -585,7 +585,45 @@
 		<property name="entrepreneur" ref="entrepreneur1Entrepreneur"/>
 	</bean>
 	
+		<!-- Bookkeepers -->
+		
+		<bean name="bookkeeperUserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="bookkeeper"/>
+		<property name="password" value="bookkeeper"/>
+		<property name="enabled" value="true"/>
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Bookkeeper"/>
+				<property name="surname" value="Zero"/>
+				<property name="email" value="bookkeeper@acme.com"/>
+			</bean>
+		</property>
+		<property name="roles">
+			<list>
+				<ref bean="bookkeeperBookkeeper"/>
+				<ref bean="bookkeeperAuthenticated"/>
+			</list>
+		</property>
+	</bean>
 	
-
+	<bean name="bookkeeperBookkeeper" class="acme.entities.roles.Bookkeeper">
+		<property name="firmName" value="Bookkeeper co."/>
+		<property name="responsabilityStatement" value="It's my responsability, it's my war"/>
+	</bean>
+	
+	<bean name="bookkeeperAuthenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="bookkeeperUserAccount"/>
+	</bean>
+	
+	<!-- Accounting records -->
+	
+	<bean name="accounting01" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="Accounting Record 01"/>
+		<property name="status" value="PUBLISHED"/>
+		<property name="creationMoment" value="2000/11/11 14:30"/>
+		<property name="body" value="This is a body: ヾ｜*￣ー￣｜*￣ー￣｜/”　　ヾ｜*￣∇￣*｜"/>
+		<property name="investment" ref="investmentRound1"/>
+		<property name="bookkeeper" ref="bookkeeperBookkeeper"/>
+	</bean>
 
 </beans>

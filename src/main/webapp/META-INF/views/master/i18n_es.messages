@@ -110,6 +110,11 @@ master.menu.authenticated = Autenticado
 master.menu.entrepreneur = Empresario
 master.menu.entrepreneur.investment.list = Mi lista de inversiones
 
+# master.menu.bookkeeper ###################################################
+
+master.menu.bookkeeper = Contable
+master.menu.bookkeeper.investment.list-not = Lista de inversiones sin mis registros contables
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Proveedor
