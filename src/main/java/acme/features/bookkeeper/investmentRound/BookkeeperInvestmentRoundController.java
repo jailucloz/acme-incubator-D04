@@ -15,10 +15,13 @@ import acme.framework.controllers.AbstractController;
 
 @Controller
 @RequestMapping("/bookkeeper/investment/")
-public class BookkeeperInvestmentRoundController extends AbstractController<Bookkeeper, Investment> {
+public class BookkeeperInvestmentRoundController<BookkeeperInvestmentRoundsListMineService> extends AbstractController<Bookkeeper, Investment> {
 
 	@Autowired
-	private BookkeeperInvestmentRoundsListNotMineService	listService;
+	private BookkeeperInvestmentRoundsListNotMineService	listNotMineService;
+
+	@Autowired
+	private BookkeeperInvestmentRoundListMineService		listMineService;
 
 	@Autowired
 	private BookkeeperInvestmentRoundsShowService			showService;
@@ -26,7 +29,8 @@ public class BookkeeperInvestmentRoundController extends AbstractController<Book
 
 	@PostConstruct
 	private void initialise() {
-		super.addCustomCommand(CustomCommand.LIST_NOT_MINE, BasicCommand.LIST, this.listService);
+		super.addCustomCommand(CustomCommand.LIST_NOT_MINE, BasicCommand.LIST, this.listNotMineService);
+		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}
 

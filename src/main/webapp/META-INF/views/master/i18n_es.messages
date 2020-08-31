@@ -113,6 +113,7 @@ master.menu.entrepreneur.investment.list = Mi lista de inversiones
 # master.menu.bookkeeper ###################################################
 
 master.menu.bookkeeper = Contable
+master.menu.bookkeeper.investment.list-mine = Mis listas de inversiones 
 master.menu.bookkeeper.investment.list-not = Lista de inversiones sin mis registros contables
 
 # master.menu.provider ########################################################
