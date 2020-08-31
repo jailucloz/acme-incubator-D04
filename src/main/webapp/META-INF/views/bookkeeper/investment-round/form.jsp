@@ -14,12 +14,12 @@
     <acme:form-money code="bookkeeper.investmentRound.form.label.amount" path="amount" />
     <acme:form-textbox code="bookkeeper.investmentRound.form.label.additionalInformation" path="additionalInformation" />
     
-    <a href=/acme-incubator/accounting/activity/list?id=${id}>
-    	<acme:message code="accounting.investmentRound.activity.list"/>
+    <a href=/acme-incubator/bookkeeper/activity/list?id=${id}>
+    	<acme:message code="bookkeeper.investmentRound.activity.list"/>
     </a>
     
     <br>
-    <a href=/acme-incubator/bookkeeper/accounting/list?id=${id}>
+    <a href=/acme-incubator/bookkeeper/accounting-record/list?id=${id}>
     	<acme:message code="bookkeeper.investmentRound.accounting.list"/>
     </a>
 

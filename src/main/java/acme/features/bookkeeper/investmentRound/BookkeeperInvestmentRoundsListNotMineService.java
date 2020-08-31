@@ -2,8 +2,6 @@
 package acme.features.bookkeeper.investmentRound;
 
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +13,7 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class BookkeeperInvestmentRoundsListMineService implements AbstractListService<Bookkeeper, Investment> {
+public class BookkeeperInvestmentRoundsListNotMineService implements AbstractListService<Bookkeeper, Investment> {
 
 	@Autowired
 	BookkeeperInvestmentRoundRepository repository;
@@ -45,9 +43,7 @@ public class BookkeeperInvestmentRoundsListMineService implements AbstractListSe
 
 		int id = request.getPrincipal().getActiveRoleId();
 
-		List<Investment> res = this.repository.findInvestmentRoundsByAccountingNotWroteBy(id).stream().distinct().collect(Collectors.toList());
-
-		result = res;
+		result = this.repository.findInvestmentRoundsByAccountingNotWroteBy(id);
 
 		return result;
 	}

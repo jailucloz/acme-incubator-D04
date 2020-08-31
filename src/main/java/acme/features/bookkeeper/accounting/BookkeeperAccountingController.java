@@ -1,4 +1,4 @@
-  
+
 package acme.features.bookkeeper.accounting;
 
 import javax.annotation.PostConstruct;

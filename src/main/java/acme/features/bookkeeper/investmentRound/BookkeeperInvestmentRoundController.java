@@ -14,14 +14,14 @@ import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/bookkeeper/investment-record/")
+@RequestMapping("/bookkeeper/investment/")
 public class BookkeeperInvestmentRoundController extends AbstractController<Bookkeeper, Investment> {
 
 	@Autowired
-	private BookkeeperInvestmentRoundsListMineService	listService;
+	private BookkeeperInvestmentRoundsListNotMineService	listService;
 
 	@Autowired
-	private BookkeeperInvestmentRoundsShowService		showService;
+	private BookkeeperInvestmentRoundsShowService			showService;
 
 
 	@PostConstruct

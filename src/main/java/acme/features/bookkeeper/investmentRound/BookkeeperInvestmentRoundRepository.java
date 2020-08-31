@@ -21,4 +21,7 @@ public interface BookkeeperInvestmentRoundRepository extends AbstractRepository 
 	@Query("select ar.investment from AccountingRecord ar where ar.bookkeeper.id !=?1")
 	Collection<Investment> findInvestmentRoundsByAccountingNotWroteBy(int id);
 
+	@Query("select ar.investment from AccountingRecord ar where ar.bookkeeper.id =?1")
+	Collection<Investment> findInvestmentRoundsByAccountingWroteBy(int id);
+
 }

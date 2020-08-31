@@ -89,7 +89,7 @@
 		
 		<!-- Bookkeeper  -->
 		<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">
-		<acme:menu-suboption code="master.menu.bookkeeper.investment.list-not" action="/entrepreneur/investment/list-not-mine"/>
+		<acme:menu-suboption code="master.menu.bookkeeper.investment.list-not" action="/bookkeeper/investment/list-not-mine"/>
 		</acme:menu-option>	
 		
 		<!-- Investor  -->
