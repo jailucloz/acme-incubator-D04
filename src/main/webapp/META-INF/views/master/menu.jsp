@@ -87,6 +87,11 @@
 		<acme:menu-suboption code="master.menu.entrepreneur.application.list" action="/entrepreneur/application/list-mine"/>
 		</acme:menu-option>	
 		
+		<!-- Bookkeeper  -->
+		<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">
+		<acme:menu-suboption code="master.menu.bookkeeper.investment.list-not" action="/bookkeeper/investment/list-not-mine"/>
+		</acme:menu-option>	
+		
 		<!-- Investor  -->
 		<acme:menu-option code="master.menu.investor" access="hasRole('Investor')">
 		<acme:menu-suboption code="master.menu.investor.application.list" action="/investor/application/list-mine"/>

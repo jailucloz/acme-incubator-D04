@@ -113,6 +113,11 @@ master.menu.entrepreneur = Entrepreneur
 master.menu.entrepreneur.investment.list = My Investment List
 master.menu.entrepreneur.application.list = My application list
 
+# master.menu.bookkeeper ###################################################
+
+master.menu.bookkeeper = Bookkeeper
+master.menu.bookkeeper.investment.list-not = Investment List without my accounting records
+
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
