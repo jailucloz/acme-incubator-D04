@@ -57,6 +57,29 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `banner` (
+       `id` integer not null,
+        `version` integer not null,
+        `brand` varchar(255),
+        `cvv` varchar(255),
+        `expiration_date` varchar(255),
+        `holder` varchar(255),
+        `number` varchar(255),
+        `picture` varchar(255),
+        `slogan` varchar(255),
+        `url` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `barba_bulletin` (
+       `id` integer not null,
+        `version` integer not null,
+        `author` varchar(255),
+        `moment` datetime(6),
+        `text` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `bookkeeper` (
        `id` integer not null,
         `version` integer not null,
@@ -93,6 +116,15 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `customisation` (
+       `id` integer not null,
+        `version` integer not null,
+        `activity_sectors` varchar(255),
+        `spam` varchar(255),
+        `threshold` double precision,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `entrepreneur` (
        `id` integer not null,
         `version` integer not null,
@@ -101,6 +133,24 @@
         `sector` varchar(255),
         `skills` varchar(255),
         `start_up_name` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `esquen_bulletin` (
+       `id` integer not null,
+        `version` integer not null,
+        `author` varchar(255),
+        `moment` datetime(6),
+        `text` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `forum` (
+       `id` integer not null,
+        `version` integer not null,
+        `title` varchar(255),
+        `users` varchar(255),
+        `investment_id` integer,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -141,6 +191,27 @@
         `firm_name` varchar(255),
         `profile` varchar(255),
         `sector` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `lucas_bulletin` (
+       `id` integer not null,
+        `version` integer not null,
+        `author` varchar(255),
+        `moment` datetime(6),
+        `text` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `creation_moment` datetime(6),
+        `tags` varchar(255),
+        `title` varchar(255),
+        `forum_id` integer,
+        `user_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -284,6 +355,11 @@ create index IDXrk46ejdphqrewdo2fqltdufux on `investment` (`ticker`);
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `forum` 
+       add constraint `FKfyiav75cmsy3piffwwesx650x` 
+       foreign key (`investment_id`) 
+       references `investment` (`id`);
+
     alter table `investment` 
        add constraint `FKk1kua11epb11pnocw4pcgndn1` 
        foreign key (`entrepreneur_id`) 
@@ -293,6 +369,16 @@ create index IDXrk46ejdphqrewdo2fqltdufux on `investment` (`ticker`);
        add constraint FK_dcek5rr514s3rww0yy57vvnpq 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `message` 
+       add constraint `FKfwwpivgx5j4vw4594dgrw884q` 
+       foreign key (`forum_id`) 
+       references `forum` (`id`);
+
+    alter table `message` 
+       add constraint `FKik4epe9dp5q6uenarfyia7xin` 
+       foreign key (`user_id`) 
+       references `authenticated` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

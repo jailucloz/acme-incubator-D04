@@ -43,6 +43,10 @@
        drop 
        foreign key FK_r6tqltqvrlh1cyy8rsj5pev1q;
 
+    alter table `forum` 
+       drop 
+       foreign key `FKfyiav75cmsy3piffwwesx650x`;
+
     alter table `investment` 
        drop 
        foreign key `FKk1kua11epb11pnocw4pcgndn1`;
@@ -50,6 +54,14 @@
     alter table `investor` 
        drop 
        foreign key FK_dcek5rr514s3rww0yy57vvnpq;
+
+    alter table `message` 
+       drop 
+       foreign key `FKfwwpivgx5j4vw4594dgrw884q`;
+
+    alter table `message` 
+       drop 
+       foreign key `FKik4epe9dp5q6uenarfyia7xin`;
 
     alter table `provider` 
        drop 
@@ -67,19 +79,33 @@
 
     drop table if exists `authenticated`;
 
+    drop table if exists `banner`;
+
+    drop table if exists `barba_bulletin`;
+
     drop table if exists `bookkeeper`;
 
     drop table if exists `challenge`;
 
     drop table if exists `consumer`;
 
+    drop table if exists `customisation`;
+
     drop table if exists `entrepreneur`;
+
+    drop table if exists `esquen_bulletin`;
+
+    drop table if exists `forum`;
 
     drop table if exists `inquire`;
 
     drop table if exists `investment`;
 
     drop table if exists `investor`;
+
+    drop table if exists `lucas_bulletin`;
+
+    drop table if exists `message`;
 
     drop table if exists `notice`;
 
