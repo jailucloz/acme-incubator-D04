@@ -596,6 +596,7 @@
 		<property name="userAccount" ref="bookkeeper1UserAccount"/>
 	</bean>
 	
+
 	<bean name="bookkeeper1Authenticated" class="acme.framework.entities.Authenticated">
 		<property name="userAccount" ref="bookkeeper1UserAccount"/>
 	</bean>
@@ -648,5 +649,131 @@
 		<property name="investment" ref="investment02"/>
 		<property name="bookkeeper" ref="bookkeeper2Bookkeeper"/>
 	</bean>
+
+	<bean name="investmentRound2" class="acme.entities.investmentRounds.Investment">
+		<property name="ticker" value="EME-01-012902"/>
+		<property name="title" value="Title 2"/>
+		<property name="creationMoment" value="2000/11/11 14:30"/>
+		<property name="amount" value="€ 15,000.50"/>
+		<property name="description" value="This is the second job in the system."/>
+		<property name="additionalInformation" value="http://www.example1.com"/>
+		<property name="roundKind" value="ANGEL"/>
+		<property name="entrepreneur" ref="entrepreneur2Entrepreneur"/>
+	</bean>
+	
+	<!--  Forums -->
+	
+	<bean name="forum1" class="acme.entities.forums.Forum">
+		<property name="title" value="Forum 1" />
+		<property name="users" value="entrepreneur1,investor2" />
+		<property name="investment" ref="investmentRound1" />
+	</bean>
+
+	<bean name="forum2" class="acme.entities.forums.Forum">
+		<property name="title" value="Forum 2" />
+		<property name="users" value="entrepreneur2,investor3" />
+		<property name="investment" ref="investmentRound2" />
+	</bean>
+	
+	<bean name="forum3" class="acme.entities.forums.Forum">
+		<property name="title" value="Forum 3" />
+		<property name="users" value="entrepreneur1Entrepreneur,entrepreneur2Entrepreneur,investor3,investor2" />
+		<property name="investment" ref="investmentRound1" />
+	</bean>
+
+
+	<!-- Messages -->
+	
+	<bean name="message1" class="acme.entities.messages.Message">
+		<property name="title" value="Message 1" />
+		<property name="creationMoment" value="2020/01/01 20:00" />
+		<property name="tags" value="" />
+		<property name="body" value="Body message 1" />
+		<property name="user" ref="entrepreneur1Authenticated" />
+		<property name="forum" ref="forum1" />
+	</bean>
+	<!--
+	<bean name="message2" class="acme.entities.messages.Message">
+		<property name="title" value="Message 2" />
+		<property name="creationMoment" value="2020/01/02 10:00" />
+		<property name="tags" value="tag1" />
+		<property name="body" value="Body message 2" />
+		<property name="user" ref="investor1Investor" />
+		<property name="forum" ref="forum1" />
+	</bean>
+	  
+	<bean name="message3" class="acme.entities.messages.Message">
+		<property name="title" value="Message 3" />
+		<property name="creationMoment" value="2020/01/02 20:00" />
+		<property name="tags" value="" />
+		<property name="body" value="Body message 3" />
+		<property name="user" ref="entrepreneur2Authenticated" />
+		<property name="forum" ref="forum1" />
+	</bean>
+	
+	<bean name="message4" class="acme.entities.messages.Message">
+		<property name="title" value="Message 1" />
+		<property name="creationMoment" value="2019/10/20 11:00" />
+		<property name="tags" value="" />
+		<property name="body" value="Body message 1" />
+		<property name="user" ref="investor1Authenticated" />
+		<property name="forum" ref="forum2" />
+	</bean>
+	
+	<bean name="message5" class="acme.entities.messages.Message">
+		<property name="title" value="Message 2" />
+		<property name="creationMoment" value="2019/11/10 15:00" />
+		<property name="tags" value="" />
+		<property name="body" value="Body message 2" />
+		<property name="user" ref="entrepreneur2Authenticated" />
+		<property name="forum" ref="forum2" />
+	</bean>
+	
+	<bean name="message6" class="acme.entities.messages.Message">
+		<property name="title" value="Message 1" />
+		<property name="creationMoment" value="2020/03/01 10:00" />
+		<property name="tags" value="" />
+		<property name="body" value="Body message 1" />
+		<property name="user" ref="entrepreneur1Authenticated" />
+		<property name="forum" ref="forum3" />
+	</bean>
+	
+	<bean name="message7" class="acme.entities.messages.Message">
+		<property name="title" value="Message 2" />
+		<property name="creationMoment" value="2020/03/02 20:30" />
+		<property name="tags" value="" />
+		<property name="body" value="Body message 2" />
+		<property name="user" ref="investor2Authenticated" />
+		<property name="forum" ref="forum3" />
+	</bean>
+	
+	<bean name="message8" class="acme.entities.messages.Message">
+		<property name="title" value="Message 3" />
+		<property name="creationMoment" value="2020/03/06 09:00" />
+		<property name="tags" value="" />
+		<property name="body" value="Body message 3" />
+		<property name="user" ref="entrepreneur2Authenticated" />
+		<property name="forum" ref="forum3" />
+	</bean>
+	
+	<bean name="message9" class="acme.entities.messages.Message">
+		<property name="title" value="Message 4" />
+		<property name="creationMoment" value="2020/03/20 11:00" />
+		<property name="tags" value="" />
+		<property name="body" value="Body message 4" />
+		<property name="user" ref="investor1Authenticated" />
+		<property name="forum" ref="forum3" />
+	</bean>
+	
+	<bean name="message10" class="acme.entities.messages.Message">
+		<property name="title" value="Message 5" />
+		<property name="creationMoment" value="2020/03/23 15:00" />
+		<property name="tags" value="" />
+		<property name="body" value="Body message 5" />
+		<property name="user" ref="entrepreneur2Authenticated" />
+		<property name="forum" ref="forum3" />
+	</bean>
+	-->
+
 
 </beans>
