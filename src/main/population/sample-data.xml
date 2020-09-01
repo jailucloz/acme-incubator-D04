@@ -448,6 +448,12 @@
 	
 	<!-- Investment Rounds  -->
 	
+	
+	
+	
+	
+	
+	
 	<bean id="activity01" class="acme.entities.investmentRounds.Activity">
 		<property name="title" value="Activity 1"/>
 		<property name="start" value="2020/07/27 00:00"/>
@@ -666,19 +672,19 @@
 	<bean name="forum1" class="acme.entities.forums.Forum">
 		<property name="title" value="Forum 1" />
 		<property name="users" value="entrepreneur1,investor2" />
-		<property name="investment" ref="investmentRound1" />
+		<property name="investment" ref="investment01" />
 	</bean>
 
 	<bean name="forum2" class="acme.entities.forums.Forum">
 		<property name="title" value="Forum 2" />
 		<property name="users" value="entrepreneur2,investor3" />
-		<property name="investment" ref="investmentRound2" />
+		<property name="investment" ref="investment02" />
 	</bean>
 	
 	<bean name="forum3" class="acme.entities.forums.Forum">
 		<property name="title" value="Forum 3" />
 		<property name="users" value="entrepreneur1Entrepreneur,entrepreneur2Entrepreneur,investor3,investor2" />
-		<property name="investment" ref="investmentRound1" />
+		<property name="investment" ref="investment01" />
 	</bean>
 
 
