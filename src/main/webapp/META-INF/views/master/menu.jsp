@@ -42,6 +42,8 @@
 		<acme:menu-suboption code="master.menu.authenticated.overture.list" action="/authenticated/overture/list"/>
 		<acme:menu-separator/>
 		<acme:menu-suboption code="master.menu.authenticated.challenge.list" action="/authenticated/challenge/list"/>
+		<acme:menu-separator/>
+		<acme:menu-suboption code="master.menu.authenticated.investment.list" action="/authenticated/investment/list"/>
 		</acme:menu-option>
 		
 		
@@ -79,7 +81,22 @@
 		</acme:menu-option>
 		
 		
+		<!-- Entrepreneur  -->
+		<acme:menu-option code="master.menu.entrepreneur" access="hasRole('Entrepreneur')">
+		<acme:menu-suboption code="master.menu.entrepreneur.investment.list" action="/entrepreneur/investment/list-mine"/>
+		<acme:menu-suboption code="master.menu.entrepreneur.application.list" action="/entrepreneur/application/list-mine"/>
+		</acme:menu-option>	
 		
+		<!-- Bookkeeper  -->
+		<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">
+		<acme:menu-suboption code="master.menu.bookkeeper.investment.list-mine" action="/bookkeeper/investment/list-mine"/>
+		<acme:menu-suboption code="master.menu.bookkeeper.investment.list-not" action="/bookkeeper/investment/list-not-mine"/>
+		</acme:menu-option>	
+		
+		<!-- Investor  -->
+		<acme:menu-option code="master.menu.investor" access="hasRole('Investor')">
+		<acme:menu-suboption code="master.menu.investor.application.list" action="/investor/application/list-mine"/>
+		</acme:menu-option>	
 		
 		
 
