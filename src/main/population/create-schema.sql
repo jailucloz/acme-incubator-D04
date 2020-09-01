@@ -1,16 +1,4 @@
 
-    create table `accounting_record` (
-       `id` integer not null,
-        `version` integer not null,
-        `body` varchar(255),
-        `creation_moment` datetime(6),
-        `status` varchar(255),
-        `title` varchar(255),
-        `bookkeeper_id` integer not null,
-        `investment_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `activity` (
        `id` integer not null,
         `version` integer not null,
@@ -54,15 +42,6 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `bookkeeper` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `firm_name` varchar(255),
-        `responsability_statement` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -229,16 +208,6 @@ create index IDXrk46ejdphqrewdo2fqltdufux on `investment` (`ticker`);
     alter table `user_account` 
        add constraint UK_castjbvpeeus0r8lbpehiu0e4 unique (`username`);
 
-    alter table `accounting_record` 
-       add constraint `FK41jm4vk7runvmg5tderffrele` 
-       foreign key (`bookkeeper_id`) 
-       references `bookkeeper` (`id`);
-
-    alter table `accounting_record` 
-       add constraint `FKcggg8hcmhohhlaeka6ov3thfh` 
-       foreign key (`investment_id`) 
-       references `investment` (`id`);
-
     alter table `activity` 
        add constraint `FK8cnxt6m91noqrbuk63luhvebv` 
        foreign key (`investment_id`) 
@@ -266,11 +235,6 @@ create index IDXrk46ejdphqrewdo2fqltdufux on `investment` (`ticker`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
-
-    alter table `bookkeeper` 
-       add constraint FK_krvjp9eaqyapewl2igugbo9o8 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 

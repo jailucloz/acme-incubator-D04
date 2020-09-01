@@ -488,6 +488,7 @@
 		</property>
 	</bean>
 	
+	
 	<bean id="investment01" class="acme.entities.investmentRounds.Investment">
 		<property name="ticker" value="FNB-09-732312"/>
 		<property name="creationMoment" value="2020/07/27 00:00"/>
@@ -523,7 +524,7 @@
 		<property name="creationMoment" value="2000/11/11 14:30"/>
 		<property name="statement" value="Statement 1"/>
 		<property name="offer" value="€ 15,000.50"/>
-		<property name="investmentRound" ref="investment01"/> 
+		<property name="investmentRound" ref="investmentRound1"/> 
 		<property name="investor" ref="investor1Investor"/> 
 	</bean>
 	
@@ -532,7 +533,7 @@
 		<property name="creationMoment" value="2000/11/11 14:30"/>
 		<property name="statement" value="Statement 1"/>
 		<property name="offer" value="€ 15,000.50"/>
-		<property name="investmentRound" ref="investment02"/> 
+		<property name="investmentRound" ref="investmentRound1"/> 
 		<property name="investor" ref="investor1Investor"/> 
 	</bean>
 	
@@ -569,87 +570,21 @@
 		<property name="userAccount" ref="investor1UserAccount"/>
 	</bean>
 	
-		<!-- Bookkeepers -->
 		
-		<bean name="bookkeeper1UserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="bookkeeper"/>
-		<property name="password" value="bookkeeper"/>
-		<property name="enabled" value="true"/>
-		<property name="identity">
-			<bean class="acme.datatypes.UserIdentity">
-				<property name="name" value="Bookkeeper"/>
-				<property name="surname" value="Zero"/>
-				<property name="email" value="bookkeeper@acme.com"/>
-			</bean>
-		</property>
-		<property name="roles">
-			<list>
-				<ref bean="bookkeeper1Bookkeeper"/>
-				<ref bean="bookkeeper1Authenticated"/>
-			</list>
-		</property>
-	</bean>
+		
+	<!-- Investment rounds -->
 	
-	<bean name="bookkeeper1Bookkeeper" class="acme.entities.roles.Bookkeeper">
-		<property name="firmName" value="Bookkeeper co."/>
-		<property name="responsabilityStatement" value="It's my responsability, it's my war"/>
-		<property name="userAccount" ref="bookkeeper1UserAccount"/>
-	</bean>
-	
-
-	<bean name="bookkeeper1Authenticated" class="acme.framework.entities.Authenticated">
-		<property name="userAccount" ref="bookkeeper1UserAccount"/>
-	</bean>
-	
-	<bean name="bookkeeper2UserAccount" class="acme.framework.entities.UserAccount">
-		<property name="username" value="bookkeeper2"/>
-		<property name="password" value="bookkeeper2"/>
-		<property name="enabled" value="true"/>
-		<property name="identity">
-			<bean class="acme.datatypes.UserIdentity">
-				<property name="name" value="Bookkeeper"/>
-				<property name="surname" value="Zero"/>
-				<property name="email" value="bookkeeper@acme.com"/>
-			</bean>
-		</property>
-		<property name="roles">
-			<list>
-				<ref bean="bookkeeper2Bookkeeper"/>
-				<ref bean="bookkeeper2Authenticated"/>
-			</list>
-		</property>
-	</bean>
-	
-	<bean name="bookkeeper2Bookkeeper" class="acme.entities.roles.Bookkeeper">
-		<property name="firmName" value="Bookkeeper 2 co."/>
-		<property name="responsabilityStatement" value="It's my responsability, it's my war, again..."/>
-		<property name="userAccount" ref="bookkeeper2UserAccount"/>
-	</bean>
-	
-	<bean name="bookkeeper2Authenticated" class="acme.framework.entities.Authenticated">
-		<property name="userAccount" ref="bookkeeper2UserAccount"/>
-	</bean>
-	
-	<!-- Accounting records -->
-	
-	<bean name="accounting01" class="acme.entities.accountingRecords.AccountingRecord">
-		<property name="title" value="Accounting Record 01"/>
-		<property name="status" value="PUBLISHED"/>
+	<bean name="investmentRound1" class="acme.entities.investmentRounds.Investment">
+		<property name="ticker" value="EME-01-012901"/>
+		<property name="title" value="Title 1"/>
 		<property name="creationMoment" value="2000/11/11 14:30"/>
-		<property name="body" value="This is a body: ヾ｜*￣ー￣｜*￣ー￣｜/”　　ヾ｜*￣∇￣*｜"/>
-		<property name="investment" ref="investment01"/>
-		<property name="bookkeeper" ref="bookkeeper1Bookkeeper"/>
+		<property name="amount" value="€ 15,000.50"/>
+		<property name="description" value="This is the first job in the system."/>
+		<property name="additionalInformation" value="http://www.example1.com"/>
+		<property name="roundKind" value="ANGEL"/>
+		<property name="entrepreneur" ref="entrepreneur1Entrepreneur"/>
 	</bean>
 	
-	<bean name="accounting02" class="acme.entities.accountingRecords.AccountingRecord">
-		<property name="title" value="Accounting Record 02"/>
-		<property name="status" value="DRAFT"/>
-		<property name="creationMoment" value="2010/11/11 00:30"/>
-		<property name="body" value="This is the same body: ヾ｜*￣ー￣｜*￣ー￣｜/”　　ヾ｜*￣∇￣*｜"/>
-		<property name="investment" ref="investment02"/>
-		<property name="bookkeeper" ref="bookkeeper2Bookkeeper"/>
-	</bean>
-
 	<bean name="investmentRound2" class="acme.entities.investmentRounds.Investment">
 		<property name="ticker" value="EME-01-012902"/>
 		<property name="title" value="Title 2"/>
@@ -774,6 +709,5 @@
 		<property name="forum" ref="forum3" />
 	</bean>
 	-->
-
 
 </beans>

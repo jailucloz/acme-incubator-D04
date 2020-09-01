@@ -1,12 +1,4 @@
 
-    alter table `accounting_record` 
-       drop 
-       foreign key `FK41jm4vk7runvmg5tderffrele`;
-
-    alter table `accounting_record` 
-       drop 
-       foreign key `FKcggg8hcmhohhlaeka6ov3thfh`;
-
     alter table `activity` 
        drop 
        foreign key `FK8cnxt6m91noqrbuk63luhvebv`;
@@ -31,10 +23,6 @@
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
-    alter table `bookkeeper` 
-       drop 
-       foreign key FK_krvjp9eaqyapewl2igugbo9o8;
-
     alter table `consumer` 
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
@@ -55,8 +43,6 @@
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
 
-    drop table if exists `accounting_record`;
-
     drop table if exists `activity`;
 
     drop table if exists `administrator`;
@@ -66,8 +52,6 @@
     drop table if exists `application`;
 
     drop table if exists `authenticated`;
-
-    drop table if exists `bookkeeper`;
 
     drop table if exists `challenge`;
 
