@@ -351,7 +351,9 @@ Investment
 + title: String {NotBlank}
 + description: String {NotBlank}
 + amount: Money {NotNull, Valid}
-+ additinalInformation: String {NotBlank}</panel_attributes>
++ additinalInformation: String {NotBlank}
+bg=pink
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -369,6 +371,7 @@ Application
 + creationMoment: Date {NotNull, Temporal.TIMESTAMP, Past}
 + statement: String {NotBlank}
 + offer: Money {NotNull, Valid}
+bg=pink
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -384,7 +387,8 @@ Application
 Activity
 --
 + company: String {NotBlank}
-+ sector: String {NotBlank}</panel_attributes>
++ sector: String {NotBlank}
+bg=pink</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
